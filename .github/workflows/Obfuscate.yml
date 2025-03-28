@@ -1,8 +1,8 @@
 name: Build Obfuscate BPB Panel 
 
-on: 
+于: 
   push: 
-    branches: 
+    分支: 
       - main 
   schedule: 
     - cron: "0 1 * * *" # 每天凌晨 1 点执行 
@@ -25,7 +25,6 @@ jobs:
 
       - name: Install dependencies 
         run: | 
-          npm ci 
           npm install -g javascript-obfuscator 
 
       - name: Clone BPB workjs 
@@ -48,7 +47,7 @@ jobs:
           --transform-object-keys true \
           --unicode-escape-sequence true 
 
-      - name: Commit changes 
+      - name: 提交更改 
         uses: stefanzweifel/git-auto-commit-action@v5 
         with: 
           branch: main 
